@@ -1,0 +1,33 @@
+{
+  "name": "atanh",
+  "version": "0.0.0",
+  "description": "A ponyfill for ES6 Math.atanh",
+  "license": "MIT",
+  "repository": "arthurvr/atanh",
+  "author": {
+    "name": "Arthur Verschaeve",
+    "email": "contact@arthurverschaeve.be",
+    "url": "arthurverschaeve.be"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "tan",
+    "harmony",
+    "ponyfill",
+    "polyfill",
+    "tanh",
+    "atanh"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^0.0.4"
+  }
+}

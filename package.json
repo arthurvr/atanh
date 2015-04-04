@@ -1,6 +1,6 @@
 {
   "name": "atanh",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A ponyfill for ES6 Math.atanh",
   "license": "MIT",
   "repository": "arthurvr/atanh",

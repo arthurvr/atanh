@@ -28,6 +28,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "ava": "^0.0.4"
+    "ava": "^0.0.4",
+    "require-uncached": "^1.0.2"
   }
 }

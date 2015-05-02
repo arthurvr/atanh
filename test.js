@@ -1,6 +1,18 @@
 'use strict';
 var test = require('ava');
+var requireUncached = require('require-uncached');
+
+Math.atanh = undefined;
 var atanh = require('./');
+
+test('Uses the build-in function when possible', function (t) {
+	Math.atanh = function () {
+		return 'foo';
+	};
+
+	t.assert(requireUncached('./')() === 'foo');
+	Math.atanh = undefined;
+});
 
 test('If x is NaN, the result is NaN', function (t) {
 	t.assert(isNaN(atanh(NaN)));

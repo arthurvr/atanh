@@ -24,7 +24,8 @@
     "ponyfill",
     "polyfill",
     "tanh",
-    "atanh"
+    "atanh",
+    "shim"
   ],
   "dependencies": {},
   "devDependencies": {

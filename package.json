@@ -30,6 +30,7 @@
   "dependencies": {},
   "devDependencies": {
     "ava": "^0.0.4",
+    "float-equal": "^1.0.0",
     "require-uncached": "^1.0.2"
   }
 }

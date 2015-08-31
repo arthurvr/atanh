@@ -27,11 +27,11 @@ test('If x is greater than 1, the result is NaN', function (t) {
 	t.assert(isNaN(atanh(2)));
 });
 
-test('If x is −1, the result is -Infinity',  function (t) {
+test('If x is −1, the result is -Infinity', function (t) {
 	t.assert(atanh(-1) === -Infinity);
 });
 
-test('If x is 1, the result is Infinity',  function (t) {
+test('If x is 1, the result is Infinity', function (t) {
 	t.assert(atanh(1) === Infinity);
 });
 

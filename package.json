@@ -13,7 +13,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "xo && node test.js"
   },
   "files": [
     "index.js"
@@ -31,6 +31,7 @@
   "devDependencies": {
     "ava": "^0.0.4",
     "float-equal": "^1.0.0",
-    "require-uncached": "^1.0.2"
+    "require-uncached": "^1.0.2",
+    "xo": "*"
   }
 }

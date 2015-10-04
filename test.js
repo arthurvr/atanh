@@ -1,13 +1,12 @@
-'use strict';
-var test = require('ava');
-var requireUncached = require('require-uncached');
-var floatEqual = require('float-equal');
+import test from 'ava';
+import requireUncached from 'require-uncached';
+import floatEqual from 'float-equal';
 
 Math.atanh = undefined;
-var atanh = require('./');
+import atanh from './';
 
-test('Uses the build-in function when possible', function (t) {
-	Math.atanh = function () {
+test('Uses the build-in function when possible', t => {
+	Math.atanh = () => {
 		return 'foo';
 	};
 
@@ -17,37 +16,37 @@ test('Uses the build-in function when possible', function (t) {
 	t.end();
 });
 
-test('If x is NaN, the result is NaN', function (t) {
+test('If x is NaN, the result is NaN', t => {
 	t.true(isNaN(atanh(NaN)));
 	t.end();
 });
 
-test('If x is less than −1, the result is NaN', function (t) {
+test('If x is less than −1, the result is NaN', t => {
 	t.true(isNaN(atanh(-2)));
 	t.end();
 });
 
-test('If x is greater than 1, the result is NaN', function (t) {
+test('If x is greater than 1, the result is NaN', t => {
 	t.true(isNaN(atanh(2)));
 	t.end();
 });
 
-test('If x is −1, the result is -Infinity', function (t) {
+test('If x is −1, the result is -Infinity', t => {
 	t.is(atanh(-1), -Infinity);
 	t.end();
 });
 
-test('If x is 1, the result is Infinity', function (t) {
+test('If x is 1, the result is Infinity', t => {
 	t.is(atanh(1), Infinity);
 	t.end();
 });
 
-test('If x is 0, the result is 0', function (t) {
+test('If x is 0, the result is 0', t => {
 	t.is(atanh(0), 0);
 	t.end();
 });
 
-test('Returns an implementation-dependent approximation to the inverse hyperbolic tangent of x', function (t) {
+test('Returns an implementation-dependent approximation to the inverse hyperbolic tangent of x', t => {
 	t.true(floatEqual(atanh(0.1), 0.10033534773107562));
 	t.true(floatEqual(atanh(0.2), 0.2027325540540821));
 	t.true(floatEqual(atanh(0.3), 0.3095196042031118));
@@ -60,13 +59,13 @@ test('Returns an implementation-dependent approximation to the inverse hyperboli
 	t.end();
 });
 
-test('Return 0 when passing null', function (t) {
+test('Return 0 when passing null', t => {
 	t.is(atanh(null), 0);
 	t.end();
 });
 
-test('Return NaN when passing nonsense input', function (t) {
-	['foo', function () {}, undefined].forEach(function (nonsense) {
+test('Return NaN when passing nonsense input', t => {
+	['foo', function () {}, undefined].forEach(nonsense => {
 		t.true(isNaN(atanh(nonsense)));
 	});
 

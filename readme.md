@@ -4,6 +4,7 @@
 
 Ponyfill: a polyfill that does not overwrite the native method
 
+
 ## Install
 
 ```
@@ -14,7 +15,7 @@ $ npm install --save atanh
 ## Usage
 
 ```js
-var atanh = require('atanh');
+const atanh = require('atanh');
 
 atanh(0.34);
 //=> 0.354092528962243

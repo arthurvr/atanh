@@ -1,8 +1,6 @@
 # atanh [![Build Status](https://travis-ci.org/arthurvr/atanh.svg?branch=master)](https://travis-ci.org/arthurvr/atanh)
 
-> A ponyfill for ES6 [Math.atanh](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atanh).
-
-Ponyfill: a polyfill that does not overwrite the native method
+> A [ponyfill](https://ponyfill.com) for ES6 [Math.atanh](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/atanh).
 
 
 ## Install

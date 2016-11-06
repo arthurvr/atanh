@@ -1,49 +1,29 @@
 import test from 'ava';
-import requireUncached from 'require-uncached';
 import floatEqual from 'float-equal';
-
-Math.atanh = undefined;
 import atanh from './';
-
-test('Uses the build-in function when possible', t => {
-	Math.atanh = () => {
-		return 'foo';
-	};
-
-	t.is(requireUncached('./')(), 'foo');
-	Math.atanh = undefined;
-
-	t.end();
-});
 
 test('If x is NaN, the result is NaN', t => {
 	t.true(isNaN(atanh(NaN)));
-	t.end();
 });
 
 test('If x is less than −1, the result is NaN', t => {
 	t.true(isNaN(atanh(-2)));
-	t.end();
 });
 
 test('If x is greater than 1, the result is NaN', t => {
 	t.true(isNaN(atanh(2)));
-	t.end();
 });
 
 test('If x is −1, the result is -Infinity', t => {
 	t.is(atanh(-1), -Infinity);
-	t.end();
 });
 
 test('If x is 1, the result is Infinity', t => {
 	t.is(atanh(1), Infinity);
-	t.end();
 });
 
 test('If x is 0, the result is 0', t => {
 	t.is(atanh(0), 0);
-	t.end();
 });
 
 test('Returns an implementation-dependent approximation to the inverse hyperbolic tangent of x', t => {
@@ -56,18 +36,14 @@ test('Returns an implementation-dependent approximation to the inverse hyperboli
 	t.true(floatEqual(atanh(0.7), 0.8673005276940532));
 	t.true(floatEqual(atanh(0.8), 1.0986122886681098));
 	t.true(floatEqual(atanh(0.9), 1.4722194895832204));
-	t.end();
 });
 
 test('Return 0 when passing null', t => {
 	t.is(atanh(null), 0);
-	t.end();
 });
 
 test('Return NaN when passing nonsense input', t => {
 	['foo', function () {}, undefined].forEach(nonsense => {
 		t.true(isNaN(atanh(nonsense)));
 	});
-
-	t.end();
 });

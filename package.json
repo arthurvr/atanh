@@ -31,7 +31,6 @@
   "devDependencies": {
     "ava": "*",
     "float-equal": "^1.0.0",
-    "require-uncached": "^1.0.2",
     "xo": "*"
   }
 }
